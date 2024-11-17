@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "4Eu6yqzI4iKAW/eObWrCYuaY3RzfgRDtAlGvsHfi2YM=",
+  "Source": "IdentityManagementSystemAPI",
+  "BasePath": "_content/IdentityManagementSystemAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
