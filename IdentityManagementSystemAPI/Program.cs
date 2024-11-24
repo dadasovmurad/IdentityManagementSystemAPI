@@ -4,16 +4,23 @@ using Microsoft.EntityFrameworkCore;
 
 
 var builder = WebApplication.CreateBuilder(args);
+var services = builder.Services;
 
-builder.Services.AddDbContext<AppDbContext>(options =>
+services.AddControllers();
+services.AddApplicationServices();
+
+services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("PostgreSQL")));
 
 
-builder.Services.AddIdentity<IdentityUser, IdentityRole>()
-    .AddEntityFrameworkStores<AppDbContext>()
-    .AddDefaultTokenProviders();   
+services.AddIdentity<AppUser, IdentityRole>()
+    .AddEntityFrameworkStores<AppDbContext>();
+
+
+services.AddApplicationServices();
 
 
 var app = builder.Build();
+app.MapControllers();
 
 app.Run();
